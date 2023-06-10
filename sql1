@@ -1,0 +1,72 @@
+CREATE TABLE Customer (
+  CustomerID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Email VARCHAR(100),
+  Phone VARCHAR(20)
+);
+/*DELETE FROM Customers;
+delete all row
+*/
+
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (2, 'Jane', 'Smith', 'jane.smith@example.com', '555-5678');
+
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (3, 'David', 'Johnson', 'david.johnson@example.com', '555-9876');
+insert into customer(customerid,firstname,lastname,email,phone)
+values(1,'priyam','karn','priyamkarn54@gmail.com','854105');
+select * from customer;
+select * from customer order by customerid desc
+-- Inserting Row 4
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (4, 'Sarah', 'Williams', 'sarah.williams@example.com', '555-2468');
+
+-- Inserting Row 5
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (5, 'Michael', 'Brown', 'michael.brown@example.com', '555-1357');
+
+-- Inserting Row 6
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (6, 'Emily', 'Davis', 'emily.davis@example.com', '555-8642');
+
+-- Inserting Row 7
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (7, 'Matthew', 'Taylor', 'matthew.taylor@example.com', '555-3698');
+
+-- Inserting Row 8
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (8, 'Olivia', 'Miller', 'olivia.miller@example.com', '555-8024');
+
+-- Inserting Row 9
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (9, 'James', 'Anderson', 'james.anderson@example.com', '555-6173');
+
+-- Inserting Row 10
+INSERT INTO Customer (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (10, 'Sophia', 'Thomas', 'sophia.thomas@example.com', '555-9741');
+select * from customer
+
+/*varchar variable size datatype
+char fixed size data type*/
+select firstname from customer where customerid>5 and customerid<8
+
+select * from customer where customerid=5 or customerid=6 or customerid=7
+    /*in is use to reduce or condition*/
+select * from customer where customerid in(5,6,7,8)
+
+select * from customer where firstname like '%a_'
+    /*single char match */
+    
+SELECT *
+FROM Customer
+WHERE FirstName LIKE '%y%';
+select distinct firstname from customer;
+/*count,sum,max,min,avg */
+/*select aur from ke bich me jo v hoga wahi group by ke bad v hoga*/
+select lastname,count(*) from customer group by lastname;
+/*count(*) counts null values also */
+/*'p%'for first name,%m */
+/*having with aggregate*/
+select customerid,sum(customerid) from customer group by customerid having sum(customerid)>=1
+
