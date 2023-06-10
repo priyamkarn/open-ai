@@ -7,3 +7,5 @@ WHERE rn = 1;
 
 
 select first_name from (select first_name,DENSE_RANK() over(order by customer_id desc) as rnk from customers)ranked where rnk=3
+
+select max(customer_id) from Customers where customer_id<(select max(customer_id) from Customers where customer_id<(select max(customer_id) from Customers))
