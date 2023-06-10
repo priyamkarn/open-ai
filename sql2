@@ -1,0 +1,25 @@
+CREATE TABLE Sales (
+  SaleID INT,
+  ProductName VARCHAR(50),
+  Category VARCHAR(50),
+  Quantity INT,
+  Price DECIMAL(10, 2),
+  SaleDate DATE
+);
+
+INSERT INTO Sales VALUES
+  (1, 'Product A', 'Category 1', 10, 100.00, TO_DATE('2023-01-01', 'YYYY-MM-DD'));
+
+INSERT INTO Sales VALUES
+  (2, 'Product B', 'Category 2', 5, 50.00, TO_DATE('2023-01-02', 'YYYY-MM-DD'));
+
+INSERT INTO Sales VALUES
+  (3, 'Product C', 'Category 1', 8, 80.00, TO_DATE('2023-01-03', 'YYYY-MM-DD'));
+
+INSERT INTO Sales VALUES
+  (4, 'Product A', 'Category 2', 12, 120.00, TO_DATE('2023-01-04', 'YYYY-MM-DD'));
+
+INSERT INTO Sales VALUES
+  (5, 'Product B', 'Category 1', 6, 60.00, TO_DATE('2023-01-05', 'YYYY-MM-DD'));
+select * from sales
+select category,sum(quantity) as summ from sales group by category having sum(quantity)>5 order by summ desc
