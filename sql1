@@ -68,5 +68,12 @@ select lastname,count(*) from customer group by lastname;
 /*count(*) counts null values also */
 /*'p%'for first name,%m */
 /*having with aggregate*/
-select customerid,sum(customerid) from customer group by customerid having sum(customerid)>=1
+select firstname,avg(customerid) from customer group by firstname having avg(customerid)>=5
+SELECT FirstName, AVG(CustomerID) AS AvgCustomerID
+FROM Customer
+GROUP BY FirstName
+HAVING AVG(CustomerID) >= 5
+ORDER BY AvgCustomerID DESC;
 
+SELECT sum(customerid) AS AverageQuantity
+FROM customer;
