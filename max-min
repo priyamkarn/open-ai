@@ -4,3 +4,6 @@ FROM (
   FROM sales
 ) ranked
 WHERE rn = 1;
+
+
+select first_name from (select first_name,DENSE_RANK() over(order by customer_id desc) as rnk from customers)ranked where rnk=3
