@@ -1,0 +1,6 @@
+SELECT saleid
+FROM (
+  SELECT saleid, DENSE_RANK() OVER (ORDER BY price ) AS rn
+  FROM sales
+) ranked
+WHERE rn = 1;
